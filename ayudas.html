@@ -66,3 +66,57 @@ toggleBtn.onclick = function() {
 </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayudas</title>
+    <link rel="icon" href="icono.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="menu-toggle" id="toggleMenu" title="Mostrar/Ocultar menú">☰</button>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <img src="icono.png" alt="Logo" class="sidebar-logo-img">
+            <hr class="sidebar-divider">
+        </div>
+        <a href="paises-del-mundo.html" class="sidebar-link" style="margin-top:18px;">Paises del Mundo</a>
+        <a href="ayudas.html" class="sidebar-link">Ayudas</a>
+        <a href="index.html" class="sidebar-link">Volver al juego</a>
+    </div>
+    <div class="container with-sidebar" id="mainContainer">
+        <h1>Ayudas</h1>
+        <div style="max-width:600px; margin:30px auto; background:#fffbe7; border-radius:10px; padding:24px; border:1.5px solid #ffb300;">
+            <h2>¿Cómo jugar?</h2>
+            <ul>
+                <li>Haz clic en <b>Mostrar 10 países aleatorios</b> para iniciar el juego.</li>
+                <li>Ingresa los nombres de los tres participantes y presiona <b>Iniciar</b>.</li>
+                <li>Cada participante tendrá 5 turnos para girar la ruleta y sumar caídas en los países seleccionados.</li>
+                <li>El país con más caídas será el ganador. En caso de empate, se realiza un desempate automático.</li>
+            </ul>
+            <h2>Otras funciones</h2>
+            <ul>
+                <li>En <b>Paises del Mundo</b> puedes buscar cualquier país y ver sus ciudades principales.</li>
+                <li>Usa el menú lateral para navegar entre las secciones.</li>
+            </ul>
+            <h2>¿Necesitas más ayuda?</h2>
+            <p>Contacta a tu profesor o revisa la documentación del juego para más detalles.</p>
+        </div>
+    </div>
+    <script>
+    // Mostrar/ocultar menú lateral
+    const toggleBtn = document.getElementById('toggleMenu');
+    const sidebar = document.getElementById('sidebar');
+    const mainContainer = document.getElementById('mainContainer');
+    let menuVisible = true;
+    toggleBtn.onclick = function() {
+        menuVisible = !menuVisible;
+        sidebar.classList.toggle('hidden', !menuVisible);
+        mainContainer.classList.toggle('sidebar-hidden', !menuVisible);
+    };
+    </script>
+</body>
+</html>
