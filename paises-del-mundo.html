@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises del mundo</title>
+    <link rel="icon" href="icono.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="menu-toggle" id="toggleMenu" title="Mostrar/Ocultar menú">☰</button>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <img src="icono.png" alt="Logo" class="sidebar-logo-img">
+            <hr class="sidebar-divider">
+        </div>
+        <a href="index.html" class="sidebar-link" style="text-align:left;">Volver al juego</a>
+        <a href="ayudas.html" class="sidebar-link" style="text-align:left;">Ayudas</a>        
+    </div>
+    <div class="container with-sidebar" id="mainContainer">
+        <h1 style="margin-top: 80px;">Paises del mundo</h1>
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="searchInput" placeholder="Buscar país por nombre..." style="padding:8px; width: 250px; border-radius:6px; border:1px solid #ccc;">
+            <button id="showAllBtn" type="button" style="margin-left:10px;">Mostrar todos los países</button>
+        </div>
+        <div id="totalPaises" style="margin-bottom: 10px; font-weight: bold;"></div>
+        <div id="countryList" class="country-grid"></div>
+        <div id="citySection" class="hidden" style="margin-top:30px; text-align:left;">
+            <div id="selectedFlag" style="margin-bottom:10px;"></div>
+            <h3 id="cityTitle" style="text-align:left;"></h3>
+            <ul id="cityList" style="text-align:left; padding-left:18px;"></ul>
+        </div>
+    </div>
+    <footer>
+        Web diseñada por Samuel David Gonzalez en compañía de su padre y con IA @2025
+    </footer>
+    <script src="paises-del-mundo.js"></script>
+    <script>
+const toggleBtn = document.getElementById('toggleMenu');
+const sidebar = document.getElementById('sidebar');
+const mainContainer = document.getElementById('mainContainer');
+
+// Oculta el menú automáticamente al cargar la página
+window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        sidebar.classList.add('hidden');
+        mainContainer.classList.add('sidebar-hidden');
+    }, 3000); // 3 segundos
+});
+
+// El botón solo muestra el menú y lo vuelve a ocultar tras 3 segundos
+toggleBtn.onclick = function() {
+    if (sidebar.classList.contains('hidden')) {
+        sidebar.classList.remove('hidden');
+        mainContainer.classList.remove('sidebar-hidden');
+        setTimeout(function() {
+            sidebar.classList.add('hidden');
+            mainContainer.classList.add('sidebar-hidden');
+        }, 3000);
+    }
+};
+</script>
+</body>
+</html>
